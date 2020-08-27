@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: sample-express-app 
+  name: sample-express-app   
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+  selector:
+    app: sample-express-app
+  type: NodePort
