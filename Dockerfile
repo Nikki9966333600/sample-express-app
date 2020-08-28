@@ -1,13 +1,7 @@
-{
-  "name": "sample-express-app",
-  "version": "1.0.0",
-  "description": "Node.js on Docker",
-  "author": "vsr@gmail.com",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "^4.16.1"
-  }
-}
+FROM node:7
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
+CMD node index.js
+EXPOSE 8080
