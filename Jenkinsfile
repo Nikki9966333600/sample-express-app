@@ -26,10 +26,10 @@ pipeline {
     stage('push image to ECR'){
       steps {
         sh 'echo entered ecr'
-       withDockerRegistry(credentialsId: 'ecr:us-east-1:aws-cred', url: 'http://656953382254.dkr.ecr.us-east-1.amazonaws.com/nodejs') {
+       withDockerRegistry(credentialsId: 'ecr:us-east-1:aws-cred', url: '102789521217.dkr.ecr.us-east-1.amazonaws.com/nodejs') {
           sh 'sudo usermod -aG docker jenkins'
-          sh 'docker tag nodejs:latest 656953382254.dkr.ecr.us-east-1.amazonaws.com/nodejs:latest'
-          sh 'docker push 656953382254.dkr.ecr.us-east-1.amazonaws.com/nodejs:latest'
+          sh 'docker tag nodejs:latest 102789521217.dkr.ecr.us-east-1.amazonaws.com/nodejs:latest'
+          sh 'docker push 102789521217.dkr.ecr.us-east-1.amazonaws.com/nodejs:latest'
         } 
       }
     }
